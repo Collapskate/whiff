@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+        <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=40d1649f-0493-4b70-98ba-98533de7710b" type="text/javascript"></script>
+
+        <style>
+            * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides1, .mySlides2 {display: none}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+              max-width: 1000px;
+              position: relative;
+              margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a grey background color */
+            .prev:hover, .next:hover {
+              background-color: #f1f1f1;
+              color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <br>
+            <h1><center>w h i f f .</center></h1>
+              <div class="menu">
+                  <a href="/private_office/<user>">account</a>
+                  <a href="#mapp">map</a>
+                  <a href="#hud">fav.museums</a>
+                  <a href="#kar">fav.paintings</a>
+                  <a href="/">home</a></div>
+        </div>
+        </header>
+
+        <video height="400" autoplay="autoplay" loop="loop" src="../static/img/est.mp4"></video>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div style='margin-left:80px;'><font color="white" face='Courier'><h1>immerse yourself</h1></div>
+        <div style='margin-left:230px;'><h1>in the art.</h1></font></div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+        <div style='margin-left:80px;'>
+        <font size="1px" face='Courier'><h1>The Picture of Dorian Gray, by Oscar Wilde</h1></font>
+        <font size="3px" face='Century gothic'><h1>Those who find beautiful meanings in beautiful things are the cultivated.
+            For these there is hope. They are the elect to whom beautiful things mean only beauty.</h1></font>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <font size="5px" face='Courier'><h1 id="kar"><center>Favorite paintings</center></h1></font>
+        <br><hr><br><br>
+
+        <div class="slideshow-container">
+          <div class="mySlides1">
+            <a href="../t1"><img src="../static/img/msk/alen.jpg" style="width:100%"></a>
+          </div>
+
+          <div class="mySlides1">
+            <a href="../r2"><img src="../static/img/r/val.jpg" style="width:100%"></a>
+          </div>
+
+          <div class="mySlides1">
+            <a href="../e1"><img src="../static/img/spb/ss.jpg" style="width:100%"></a>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1, 0)">❮</a>
+          <a class="next" onclick="plusSlides(1, 0)">❯</a>
+        </div>
+
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <font size="5px" face='Courier'><h1 id="hud"><center>Favorite museums</center></h1></font>
+        <br><hr><br><br>
+
+        <div class="slideshow-container">
+          <div class="mySlides2">
+            <a href="/ermitag"><img src="../static/img/erm.jpg" style="width:100%"></a>
+          </div>
+
+          <div class="mySlides2">
+            <a href="/tret"><img src="../static/img/tr.jpg" style="width:100%"></a>
+          </div>
+
+
+          <a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+          <a class="next" onclick="plusSlides(1, 1)">❯</a>
+        </div>
+
+        <script>
+            var slideIndex = [1,1];
+            var slideId = ["mySlides1", "mySlides2"]
+            showSlides(1, 0);
+            showSlides(1, 1);
+
+            function plusSlides(n, no) {
+              showSlides(slideIndex[no] += n, no);
+            }
+
+            function showSlides(n, no) {
+              var i;
+              var x = document.getElementsByClassName(slideId[no]);
+              if (n > x.length) {slideIndex[no] = 1}
+              if (n < 1) {slideIndex[no] = x.length}
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";
+              }
+              x[slideIndex[no]-1].style.display = "block";
+            }
+        </script>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <font size="5px" face='Courier'><h1 id="mapp"><center>Museum map</center></h1></font>
+        <br><hr><br><br>
+
+        <div id="map" style="width: 100%; height:600px"></div>
+        <style type="text/css">
+        .ymaps-layers-pane {
+            filter: grayscale(1);
+            -ms-filter: grayscale(1);
+            -webkit-filter: grayscale(1);
+            -moz-filter: grayscale(1);
+            -o-filter: grayscale(1);
+        }
+        </style>
+
+        <script src="https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"></script>
+        <script>
+            ymaps.ready(init);
+
+            function init() {
+              var myMap = new ymaps.Map('map', {
+                center: [58.010450, 56.229434], zoom: 4, controls: []}, {searchControlProvider: 'yandex#search'});
+              var placemark = new ymaps.Placemark([47.220636, 39.712913], {
+                balloonContentHeader: '<a href = "/msiid">МСИИД</a>', hintContent: 'МСИИД', iconCaption: 'Ростов'});
+              myMap.geoObjects.add(placemark);
+              placemark.balloon.close();
+
+              var placemark1 = new ymaps.Placemark([51.532181, 46.035338 ], {
+                balloonContentHeader: '<a href = "/sarat">музей им. А.Н. Радищева</a>', hintContent: 'музей им. А.Н. Радищева', iconCaption: 'Саратов'});
+              myMap.geoObjects.add(placemark1);
+              placemark1.balloon.close();
+
+              var placemark2 = new ymaps.Placemark([55.741392, 37.620522], {
+                balloonContentHeader: '<a href = "/tret">Третьяковская галерея</a>', hintContent: 'Третьяковская галерея', iconCaption: 'Москва'});
+              myMap.geoObjects.add(placemark2);
+              placemark2.balloon.close();
+
+              var placemark3 = new ymaps.Placemark([59.940073, 30.312733], {
+                balloonContentHeader: '<a href = "/ermitag">Государственный Эрмитаж</a>', hintContent: 'Эрмитаж', iconCaption: 'Санкт-Петербург'});
+              myMap.geoObjects.add(placemark3);
+              placemark3.balloon.close();
+            }
+        </script>
+
+    </body>
+</html>
